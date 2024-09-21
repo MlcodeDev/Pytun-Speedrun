@@ -53,6 +53,28 @@ zmienna2 =  5
 zmienna3 = zmienna1 + zmienna2
 zmienna4 = zmienna1 / zmienna2 
 ```
+#### Operatory dla zmiennych
+| Operator | Znaczenie                   |     |
+| -------- | --------------------------- | --- |
+| `+`      | Dodawanie                   |     |
+| `-`      | Odejmowanie                 |     |
+| `*`      | Mnożenie'                   |     |
+| `/`      | Dzielenie                   |     |
+| `**`     | Potęgowanie                 |     |
+| `%`      | Modulo (Reszta z dzielenia) |     |
+| `()`     | Priorytet                   | \   |
+
+Po więcej funkcji matematycznych takich jak np `.sqrt()` (Pierwiastek) odsyłam do dokumentacji wbudowanej biblioteki [math](https://docs.python.org/3/library/math.html)
+
+#### Operator inkremencji i dekremencji 
+Fancy słowo na powiedzenie dodaj albo odejmij w jednej linijce. 
+
+| Operator | Wersja skrócona | Wersja Rozwinięta |
+| -------- | --------------- | ----------------- |
+| `+=`     | `a += 1`        | `a = a +1`        |
+| `-=`     | `a -= 1`        | `a = a -1`        |
+
+
 #### Konkatenacja stringów
 Skomplikowane słowo na dodawania ze sobą Stringów
 ```python
@@ -63,7 +85,7 @@ zdanie3 = zdanie1 + "  chuj " + zdanie2
 ```
 #### Czy **string** tak naprawdę jest typem danych?
 W języku C - w którym głównie jest napisany interpreter Pythona, nie ma dedykowanego typu danych dla tekstu. String jest określany z pomocą *Array* (z ang. *Szyk*, Podstawowa struktura danych, pozwala na sklejenie wielu wartości o tym samym typie danych z użyciem jednej zmiennej).
-
+while
 ```c
 #include <stdio.h>
 
@@ -201,3 +223,89 @@ Można również na wstępie zdeterminować jaki typ danych ma zostać użyty, n
 ```python
 ui = str(input("Podaj swoje imie: "))
 ```
+
+### Instrukcje warunkowe
+```python
+if *warunkek*:
+	*zrób coś*
+elif *warunek*:
+	*zrób coś*
+else:
+	*zrób coś*
+```
+#### Operatory w Instrukcjach warunkowych 
+| Operator | Znaczenie           |
+| -------- | ------------------- |
+| `==`     | Równa się           |
+| `!=`     | Nie równa się       |
+| `<`      | Mniejsze niż        |
+| `>`      | Większe niż         |
+| `<=`     | Mniejsze bądź równe |
+| `>=`     | Większe, bądź równe |
+| `!`      | Negacja                    |
+
+#### Instrukcja switch (`match case`)
+```python
+match term:
+    case pattern-1:
+         action-1
+    case pattern-2:
+         action-2
+    case pattern-3:
+         action-3
+    case _:
+        action-default
+```
+
+### Pętle 
+#### Pętla `while`
+Powtarza coś nieskończoną ilość razy, póki warunek jest spełniony.
+
+```python
+while *warunek*:
+	# Kod 
+```
+
+Przykład:
+```python
+# Initialize a secret number
+secret_number = 42
+
+# Initialize a variable to store the user's guess
+guess = None
+
+# Create a while loop that continues until the user guesses correctly
+while guess != secret_number:
+    # Ask the user to guess the number
+    guess = int(input("Guess a number: "))
+
+    # Check if the guess is correct
+    if guess == secret_number:
+        print(" Congratulations! You guessed the secret number!")
+    else:
+        print(" Sorry, that's not correct. Try again!")
+
+print("Thanks for playing!")
+```
+
+#### Pętla `for`
+Powtarza coś określoną ilość razy.
+
+```python
+for i in range(*ilość razy*)
+```
+
+##### Funkcja `range()`
+```python
+range(*start*, *stop*, *krok*)
+```
+Gdzie:
+* `start` - Gdzie ma się zaczynać, domyślnie od zera (niewymagane).
+* `stop` - Ilość razy, (wymagane).
+* `krok` - Krok co ile pominąć? Nie wiem, jak to wytłumaczyć. 
+
+#### `break` `continue` `pass`
+| Słowo   | Znaczenie |
+| ------- | --------- |
+| `break` | Zatrzymaj |
+|         |           |
